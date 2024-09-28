@@ -78,6 +78,16 @@ public class Main {
         names.add("Sam");
         //System.out.println("removed: "+names.remove(2)+"\n"+"List: "+ names);
 
+        //4:Iterate Using For Loop: Initialize an `ArrayList` with five country names and iterate through the list using a for loop to print each country
 
+        ArrayList<String> countries = new ArrayList<>();
+        countries.add("USA");
+        countries.add("Germany");
+        countries.add("India");
+        countries.add("United States");
+        countries.add("France");
+        for(String country : countries){
+            System.out.println(country);
+        }
     }
 }
