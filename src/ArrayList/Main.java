@@ -106,6 +106,47 @@ public class Main {
         set.add(547);
         //System.out.println(occurrenceCount(set,550));
 
+        //7: **Clear the List**: Create an `ArrayList` of strings, add five names, and then clear the list. Print the list to confirm it’s empty.
+        ArrayList<String> st = new ArrayList<>();
+        st.add("Apple");
+        st.add("Banana");
+        st.add("Orange");
+        st.add("Pear");
+        st.add("Grape");
+        st.clear();
+        //System.out.println(st);
+
+        //8: **Insert Element at Index**: Create an `ArrayList` of numbers, add 10 random integers, and insert a number at index 3. Print the updated list.
+        ArrayList<Integer> intList = new ArrayList<>();
+        intList.add(1);
+        intList.add(2);
+        intList.add(3);
+        intList.add(4);
+        intList.add(5);
+        intList.add(6);
+        intList.add(7);
+        intList.add(8);
+        intList.add(9);
+        intList.add(10);
+        intList.set(3,0);
+        //System.out.println(intList);
+
+        //9: Print the size of a arraylist
+        ArrayList<Integer> intList2 = new ArrayList<>();
+        intList2.add(1);
+        intList2.add(2);
+        intList2.add(3);
+        intList2.add(4);
+        //System.out.println(intList2.size());
+
+        // 10: print the index of an element
+
+        ArrayList<Integer> intList3 = new ArrayList<>();
+        intList3.add(1);
+        intList3.add(2);
+        intList3.add(3);
+        intList3.add(4);
+        //System.out.println(intList3.indexOf(3));
 
 
 
