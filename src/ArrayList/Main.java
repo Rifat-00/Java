@@ -1,10 +1,6 @@
 package ArrayList;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -86,8 +82,51 @@ public class Main {
         countries.add("India");
         countries.add("United States");
         countries.add("France");
-        for(String country : countries){
-            System.out.println(country);
+//        for(String country : countries){
+//            System.out.println(country);
+//        }
+
+        //5:Check for Existence: Write a method that takes an `ArrayList` and a string as arguments and returns true if the string is in the list, false otherwise.
+        ArrayList<String> cities = new ArrayList<>();
+        cities.add("Paris");
+        cities.add("New York");
+        cities.add("New Japan");
+        cities.add("New York");
+        //System.out.println(isAvailable(cities,"Tokyo"));
+
+
+        //6: **Count Occurrences**: Write a method that counts how many times a specified element appears in an `ArrayList`.
+
+        ArrayList<Integer> set = new ArrayList<>();
+        set.add(550);
+        set.add(547);
+        set.add(548);
+        set.add(547);
+        set.add(550);
+        set.add(547);
+        //System.out.println(occurrenceCount(set,550));
+
+
+
+
+    }
+
+    public static boolean isAvailable(ArrayList<String > list, String name){
+        for(String s : list){
+            if(s.equals(name)){
+                return true;
+            }
         }
+        return false;
+    }
+
+    public static int occurrenceCount(ArrayList<Integer> list, int i){
+        int count = 0;
+        for (int x: list){
+            if(x == i){
+                count++;
+            }
+        }
+        return count;
     }
 }
