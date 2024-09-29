@@ -2,6 +2,7 @@ package ArrayList;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -165,9 +166,37 @@ public class Main {
         Collections.sort(intList4);
         //System.out.println(intList4);
 
-        //2: Reverse the list
+        //2: Write a method that reverses the order of elements in an `ArrayList`.
+        ArrayList<Integer> intList5 = new ArrayList<>();
+        intList5.add(1);
+        intList5.add(2);
+        intList5.add(3);
+        intList5.add(4);
+        intList5.add(5);
+
+        Collections.reverse(intList5);
+        //System.out.println(intList5);
 
 
+        //3: find max value
+        //System.out.println(maxValue(intList5));
+
+        //4: Convert ArrayList to array
+        ArrayList<String> list1 = new ArrayList<>();
+        list1.add("Apple");
+        list1.add("Banana");
+        list1.add("Orange");
+        toArray(list1);
+        //System.out.println(list1);
+
+        //5:Find Unique Elements: Write a method that finds and returns unique elements from an `ArrayList`.
+        ArrayList<String> list2 = new ArrayList<>();
+        list2.add("Apple");
+        list2.add("Apple");
+        list2.add("Banana");
+        list2.add("Banana");
+        list2.add("Orange");
+        System.out.println(uniqueStrings(list2));
 
     }
 
@@ -188,5 +217,41 @@ public class Main {
             }
         }
         return count;
+    }
+
+    public static int maxValue(ArrayList<Integer> list){
+        int max = 0;
+        for (int x: list){
+            if(x > max){
+                max = x;
+            }
+        }
+        return max;
+    }
+
+    public static String[] toArray(ArrayList<String> list){
+        String[] arr = new String[list.size()];
+        list.toArray(arr);
+        return arr;
+    }
+
+    public static List<String> uniqueStrings(ArrayList<String> list){
+        List<String> uniqueStrings = new ArrayList<>();
+
+        //Iterate through each element in the list
+        for(int i = 0; i < list.size(); i++) {
+            String s = list.get(i);
+            boolean isUnique = true;
+            for(int j = 0 ; j <list.size(); j++){
+                if(i != j && s.equals(list.get(j))){
+                    isUnique = false;
+                    break;
+                }
+            }
+            if(isUnique){
+                uniqueStrings.add(s);
+            }
+        }
+        return uniqueStrings;
     }
 }
