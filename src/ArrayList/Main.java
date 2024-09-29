@@ -1,6 +1,8 @@
 package ArrayList;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -147,6 +149,21 @@ public class Main {
         intList3.add(3);
         intList3.add(4);
         //System.out.println(intList3.indexOf(3));
+
+
+        /// Intermediate ArrayList Task
+
+        //1: Create an `ArrayList` of integers, add 10 random numbers, and sort the list in ascending order. Print the sorted list.
+        ArrayList<Integer> intList4 = new ArrayList<>();
+        intList4.add(33);
+        intList4.add(45);
+        intList4.add(47);
+        intList4.add(38);
+        intList4.add(21);
+        intList4.add(12);
+        intList4.add(16);
+        Collections.sort(intList4);
+        //System.out.println(intList4);
 
 
 
