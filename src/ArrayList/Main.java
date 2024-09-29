@@ -165,6 +165,8 @@ public class Main {
         Collections.sort(intList4);
         //System.out.println(intList4);
 
+        //2: Reverse the list
+
 
 
     }
