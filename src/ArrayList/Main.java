@@ -1,9 +1,9 @@
 package ArrayList;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -189,15 +189,94 @@ public class Main {
         toArray(list1);
         //System.out.println(list1);
 
+
         //5:Find Unique Elements: Write a method that finds and returns unique elements from an `ArrayList`.
+        //6: Removing duplicates from an array
         ArrayList<String> list2 = new ArrayList<>();
         list2.add("Apple");
         list2.add("Apple");
         list2.add("Banana");
         list2.add("Banana");
         list2.add("Orange");
-        System.out.println(uniqueStrings(list2));
+        //System.out.println("first: " + list1.get(0) + ", last: " + list2.get(list2.size()-1));
+        //System.out.println(uniqueStrings(list2));
+        //System.out.println(removeDuplicates(list2));
 
+        //7: **Find Common Elements**: Write a method that finds and returns common elements between two `ArrayLists`.
+        ArrayList<String> list3 = new ArrayList<>();
+        list3.add("Pear");
+        list3.add("Jack fruit");
+        list3.add("Mango");
+        list3.add("Banana");
+
+        ArrayList<String> list4 = new ArrayList<>();
+        list4.add("Banana");
+        list4.add("Mango");
+
+        //System.out.println(commonElements(list3,list4));
+
+        //8: **Second Largest Element**: Write a method that finds the second largest element in an `ArrayList` of integers.
+        ArrayList<Double> doubleList = new ArrayList<>();
+        doubleList.add(3.23);
+        doubleList.add(3.49);
+        doubleList.add(3.78);
+        doubleList.add(3.10);
+        doubleList.add(3.84);
+        doubleList.add(3.90);
+        //System.out.println(secondLargestElement(doubleList));
+
+        //9: Merge Two Arraylist
+        ArrayList<Integer> listA  = new ArrayList<>();
+        ArrayList<Integer> listB = new ArrayList<>();
+        listA.add(1);
+        listA.add(2);
+        listA.add(3);
+        listA.add(4);
+        listA.add(5);
+        listB.add(6);
+        listB.add(7);
+        listB.add(8);
+        listB.add(9);
+        listB.add(10);
+        //System.out.println(mergedArray(listA,listB));
+
+
+
+    }
+
+    private static List<Integer> mergedArray(ArrayList<Integer> listA, ArrayList<Integer> listB) {
+        List<Integer> mergedList = new ArrayList<>(listA);
+        mergedList.addAll(listB);
+        return mergedList;
+
+    }
+
+    private static double secondLargestElement(ArrayList<Double> doubleList) {
+        if(doubleList.size()< 2){
+            throw new IllegalArgumentException("list must contain at least 2 elements");
+        }
+
+        double largest = Double.NEGATIVE_INFINITY;
+        double secondLargest = Double.NEGATIVE_INFINITY;
+        for(double num : doubleList){
+            if(num > largest){
+                secondLargest = largest;
+                largest = num;
+            }else if(num > secondLargest && num != largest){
+                secondLargest = num;
+            }
+        }
+        return secondLargest;
+    }
+
+    private static List<String > commonElements(ArrayList<String> list3, ArrayList<String> list4) {
+        List<String> commonElements = new ArrayList<>();
+        for(String s: list3){
+            if(list4.contains(s)){
+                commonElements.add(s);
+            }
+        }
+        return commonElements;
     }
 
     public static boolean isAvailable(ArrayList<String > list, String name){
@@ -249,6 +328,16 @@ public class Main {
                 }
             }
             if(isUnique){
+                uniqueStrings.add(s);
+            }
+        }
+        return uniqueStrings;
+    }
+
+    public static List<String> removeDuplicates(ArrayList<String> list){
+        List<String> uniqueStrings = new ArrayList<>();
+        for(String s: list){
+            if(!uniqueStrings.contains(s)){
                 uniqueStrings.add(s);
             }
         }
